@@ -57,6 +57,24 @@ async function processHtmlFile(inputFilePath, outputDir) {
     }
   });
 
+  // Special handling for CSS in <style> tags.
+  $('style').each(function () {
+    let css = $(this).html();
+    let urlRegex = /url\(["']?(.*?)["']?\)/g;
+    let match;
+    while ((match = urlRegex.exec(css)) !== null) {
+      const src = match[1];
+      let downloadPromise = downloadResource(src, outputDir).then(outputPath => {
+        if (outputPath) {
+          const relativePath = path.relative(outputDir, outputPath);
+          css = css.replace(src, './' + relativePath);
+          $(this).html(css);
+        }
+      });
+      downloadPromises.push(downloadPromise);
+    }
+  });
+
   // Wait for all resources to be downloaded before saving HTML
   await Promise.all(downloadPromises);
 

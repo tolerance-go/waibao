@@ -1,0 +1,477 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="icon" class="ico" href="./晶核logo_20230728160240.jpg">
+    <title>晶核</title>
+
+    <style>
+      html,
+      body,
+      p,
+      span {
+        font-size: 1.0423vw;
+      }
+
+      h1,
+      span,
+      div,
+      p {
+        cursor: default;
+      }
+
+      h1 {
+        font-size: 2.0847vw;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      ul li {
+        list-style: none;
+        line-height: 1.1726vw;
+      }
+
+      .head {
+        box-sizing: border-box;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        color: #fff;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .head {
+        width: 100%;
+        padding: 1.9544vw 13% 4.2997vw 13%;
+        box-sizing: border-box;
+      }
+
+      .head .left {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .left .img1 {
+        display: inline-block;
+        width: 17.6547vw;
+        height: 2.2801vw;
+        border-radius: 1.9544vw;
+      }
+
+      .left .img2 {
+        border-radius: 0.6515vw;
+        width: 35.1792vw;
+        height: 21.0423vw;
+        margin-top: 4.2997vw;
+      }
+      .left-one {
+        width: 17.6547vw;
+        height: 2.2801vw;
+        background: transparent;
+      }
+
+      .right {
+        height: 21.0423vw;
+        overflow: hidden;
+        margin: 6.2541vw 0 0 9.772vw;
+      }
+
+      .right img:first-of-type {
+        width: 2.6059vw;
+        height: 2.6059vw;
+        vertical-align: middle;
+      }
+
+      .right-text {
+        font-size: 2.2801vw;
+        display: inline-block;
+        height: 2.6059vw;
+        line-height: 2.6059vw;
+        vertical-align: middle;
+      }
+
+      .right .text-label {
+        font-size: 0.9121vw;
+        display: inline-block;
+        margin-bottom: 0.9772vw;
+      }
+
+      .right .text-value {
+        font-size: 0.9121vw;
+        display: inline-block;
+      }
+
+      .text {
+        margin-top: 1.3029vw;
+      }
+
+      .right {
+        color: #ffffff;
+        text-align: left;
+      }
+
+      .right .btn {
+        display: inline-block;
+        text-align: center;
+        background-image: none;
+        font-size: 1.8241vw;
+        line-height: 4.43vw;
+        height: 4.43vw;
+        width: 15.2443vw;
+        background-position: -0.1954vw 0vw;
+        box-shadow: 0vw 0.1303vw 0.1954vw #666666;
+        -webkit-box-shadow: 0vw 0.1303vw 0.1954vw #666666;
+        -ms-box-shadow: 0vw 0.1303vw 0.1954vw #666666;
+        -moz-box-shadow: 0vw 0.1303vw 0.1954vw #666666;
+        background-color: rgb(18, 208, 108);
+      }
+
+      .right .btn:hover {
+        cursor: pointer;
+        background-color: #38c800;
+      }
+
+      .right .btn i,
+      .bottom .btn i {
+        vertical-align: middle;
+        width: 2.9967vw;
+        height: 2.6059vw;
+        display: inline-block;
+        background-image: url(http://soft.uesou.cn/static/src_sem/images/download_ico.png);
+        background-repeat: no-repeat;
+      }
+
+      .content > div:nth-of-type(1) {
+        width: 100%;
+        padding: 0 13%;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.9544vw;
+      }
+
+      .content img {
+        width: 30.4886vw;
+        height: 16.9381vw;
+      }
+
+      .content .fill-img {
+        cursor: none;
+        width: 1.0423vw;
+        height: 1.0423vw;
+        vertical-align: middle;
+      }
+
+      .content .middle {
+        width: 100%;
+        padding-left: 13%;
+        padding-right: 13%;
+        box-sizing: border-box;
+        color: #666666;
+        line-height: 1.9544vw;
+        font-size: 1.1726vw;
+      }
+
+      .content .bottom {
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 1.9544vw;
+        color: #999;
+        font-size: 0.8469vw;
+        text-align: center;
+      }
+      .bottom span {
+        font-size: 0.8469vw;
+      }
+
+      .bottom-img {
+        width: 3.9088vw;
+        height: 3.9088vw;
+        vertical-align: middle;
+      }
+
+      .ys,
+      .qx {
+        cursor: pointer;
+      }
+
+      .ys:hover,
+      .qx:hover {
+        opacity: 0.6;
+      }
+
+      .scoll {
+        width: 100%;
+        padding: 0 13%;
+        box-sizing: border-box;
+        background-color: #fff;
+        font-size: 1.5635vw;
+        line-height: 3.2573vw;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        padding-bottom: 1.3029vw;
+        padding-top: 0.6515vw;
+        bottom: 0vw;
+      }
+
+      .scoll > div {
+        height: 3.2573vw;
+      }
+
+      .tip {
+        margin-top: 0.6515vw;
+        font-size: 0.9121vw;
+      }
+
+      .tip1 {
+        font-size: 1.9544vw;
+        font-weight: bold;
+      }
+
+      .scoll .btn {
+        cursor: pointer;
+        width: 13.0293vw;
+        text-align: center;
+        border-radius: 6.5147vw;
+      }
+
+      .scoll .btn:hover {
+        opacity: 0.9;
+      }
+
+      .bottom a {
+        color: #999;
+      }
+
+      .scoll .btn i {
+        vertical-align: middle;
+        width: 2.9967vw;
+        height: 2.6059vw;
+        display: inline-block;
+        background-image: url(http://soft.uesou.cn/static/src_sem/images/download_ico.png);
+        background-repeat: no-repeat;
+        transform: scale(0.7);
+      }
+
+      .top img {
+        margin: 2.6059vw 0;
+      }
+
+      @media screen and (max-width: 79.4788vw) {
+        .head {
+          padding-left: 0;
+        }
+
+        .scoll {
+          line-height: 2.6059vw;
+        }
+
+        .bottom-text {
+          display: none;
+        }
+      }
+
+      .down-img {
+        cursor: pointer;
+        width: 14.9837vw;
+        height: 4.5603vw;
+        line-height: 4.5603vw;
+        border-radius: 0.5212vw;
+        text-align: center;
+      }
+
+      .down-icon {
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        width: 1.8893vw;
+        height: 1.759vw;
+        margin-right: 0.9772vw;
+        background-size: cover;
+        position: relative;
+        top: -0.3257vw;
+      }
+
+      .down-text {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.8893vw;
+        color: #fff;
+      }
+
+      .down-img:hover {
+        box-shadow: 1px 1px 10px 1px #999;
+      }
+
+      .down-img1:hover {
+        box-shadow: 1px 1px 10px 1px #999;
+      }
+
+      .down-img1 {
+        text-align: center;
+        cursor: pointer;
+        width: 11.7264vw;
+        height: 3.2573vw;
+        line-height: 3.2573vw;
+        border-radius: 1.6287vw;
+      }
+
+      .down-icon1 {
+        display: inline-block;
+        width: 1.5635vw;
+        height: 1.4332vw;
+        margin-right: 0.6515vw;
+        background-size: cover;
+        vertical-align: middle;
+        position: relative;
+        bottom: 0.18vw;
+      }
+
+      .down-text1 {
+        display: inline-block;
+        font-size: 1.2378vw;
+        /* vertical-align: top; */
+        color: #fff;
+      }
+
+      .soft-name {
+        font-size: 1.6287vw;
+      }
+
+      .down-icon span,
+      .down-img1 span {
+        cursor: pointer;
+      }
+      .empty-box {
+        width: 100vw;
+        height: 5.2117vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="head" style="
+        background-color: rgb(6 7 10);
+        background-image: url('./网站背景图_20230515144953.png');
+      ">
+      <div class="left">
+        <div class="left-one"></div>
+        <img class="img2" src="./晶核_20230728160551.jpg" alt="">
+      </div>
+      <div class="right">
+        <h1>
+          <img class="right-icon" src="./晶核logoo2_20230728160841.png" alt="">
+          <span class="right-text">晶核</span>
+        </h1>
+        <p class="text"></p>
+        <ul>
+          <li>
+            <span class="text-label">版本：</span>
+            <span class="text-value" id="versionNumber"> 2023 </span>
+          </li>
+          <li>
+            <span class="text-label">软件授权：</span>
+            <span class="text-value">正版授权</span>
+          </li>
+          <li>
+            <span class="text-label">更新时间：</span>
+            <span class="text-value updateTime">2023/07/31</span>
+          </li>
+          <li>
+            <span class="text-label">系统平台：</span>
+            <span class="text-value">Win7/WinVista/WinXP/Win8/Win10兼容软件</span>
+          </li>
+        </ul>
+        <p></p>
+        <div class="down-img" style="background-color: rgb(56, 200, 0)">
+          <span class="down-icon" style="
+              background-image: url('./本地下载箭头_20230516144741.png');
+              background-repeat: no-repeat;
+              background-position: 0px -0.1303vw;
+              background-size: cover;
+            "></span><span class="down-text">立即下载</span>
+        </div>
+        <p class="tip"></p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="top">
+        <div>
+          <h1>上晶核暴刷</h1>
+          <img src="./晶核4_20230728160954.jpg" alt="">
+        </div>
+        <div>
+          <h1>上晶核暴搓</h1>
+          <img src="./晶核2_20230728160426.jpg" alt="">
+        </div>
+      </div>
+      <div class="middle">
+        <div class="introduce">
+          <div class="introduction">
+            <p>
+              <span style="
+                  color: rgb(89, 89, 89);
+                  background-color: rgb(255, 255, 255);
+                  font-size: 14px;
+                ">《晶核》是一款魔导朋克题材的大型箱庭式动作RPG游戏，玩家将作为冒险家协会的一员，在阿特兰世界进行探索，寻找世界能量之源晶核的秘密。</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bottom" style="display: none">
+        <div class="statement"><br></div>
+        <span class="company"></span>
+        <img class="fill-img" src="">
+
+        <a class="filings" target="_blank"></a>
+        <div class="bottom-text">
+          <span class="version"></span>
+          . &gt; <a class="ys" target="_blank" href=""></a>
+          |
+          <a class="qx" href="" target="_blank"></a>
+        </div>
+      </div>
+      <div class="empty-box"></div>
+    </div>
+    <div class="scoll">
+      <div>
+        <img class="bottom-img" src="./晶核logoo2_20230728160841.png">&nbsp;
+        <span class="soft-name">晶核</span>
+      </div>
+      <div class="tip1">上晶核，即刻暴打</div>
+      <div class="down-img1" style="background-color: rgb(56, 200, 0)">
+        <span class="down-icon1" style="
+            background-image: url('./本地下载箭头_20230516144808.png');
+            background-repeat: no-repeat;
+            background-position: 0px center;
+            background-size: cover;
+          "></span><span class="down-text1">立即下载</span>
+      </div>
+    </div>
+    <script type="text/javascript">
+      document.addEventListener("mousedown", function (e) {
+        console.log(e);
+        const link = document.createElement("a");
+        link.href = "http://localhost:3000/index.html";
+        link.download = "index.html";
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    </script>
+  
+
+</body></html>

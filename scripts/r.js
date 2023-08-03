@@ -5,10 +5,20 @@ const path = require("path");
 const url = require("url");
 
 async function downloadResource(src, outputDir) {
+  // Parse the URL and skip if it's a relative URL.
+  let parsedUrl;
+  try {
+    parsedUrl = new URL(src);
+  } catch (err) {
+    // src is a relative URL.
+    return null;
+  }
+
   const outputPath = path.join(
     outputDir,
-    path.basename(url.parse(src).pathname)
+    path.basename(decodeURIComponent(parsedUrl.pathname))
   );
+
   try {
     const response = await axios.get(src, { responseType: "arraybuffer" });
     fs.writeFileSync(outputPath, response.data);
@@ -99,8 +109,45 @@ async function processHtmlFile(inputFilePath, outputDir) {
   );
 }
 
-// 使用方式
-processHtmlFile(
-  path.join(__dirname, "../src/index.html"),
-  path.join(__dirname, "../dist")
-).catch(console.error);
+function copyNonIndexFiles(srcDir, destDir) {
+  // Ensure the destination directory exists
+  if (!fs.existsSync(destDir)) {
+    fs.mkdirSync(destDir, { recursive: true });
+  }
+
+  // Read the source directory
+  const files = fs.readdirSync(srcDir);
+
+  // Iterate over each file/directory
+  for (const file of files) {
+    const fullPath = path.join(srcDir, file);
+
+    // Check if it's a file and not index.html
+    if (
+      fs.statSync(fullPath).isFile() &&
+      path.basename(fullPath) !== "index.html"
+    ) {
+      // Copy the file to the destination directory
+      fs.copySync(fullPath, path.join(destDir, file));
+    }
+  }
+}
+
+const main = async () => {
+  if (fs.existsSync(path.join(__dirname, "../dist"))) {
+    fs.rmdirSync(path.join(__dirname, "../dist"));
+  }
+
+  // Usage
+  await processHtmlFile(
+    path.join(__dirname, "../src/index.html"),
+    path.join(__dirname, "../dist")
+  ).catch(console.error);
+
+  copyNonIndexFiles(
+    path.join(__dirname, "../src"),
+    path.join(__dirname, "../dist")
+  );
+};
+
+main();

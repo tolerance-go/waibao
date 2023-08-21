@@ -39,8 +39,9 @@ async function processHtmlFile(inputFilePath, outputDir) {
   const $ = cheerio.load(inputHtml);
 
   // Download resources and replace the URLs.
+  // Updated selector array to include 'script[src]'
   let downloadPromises = [];
-  ["link[href]", "img[src]"].forEach((selector) => {
+  ["link[href]", "img[src]", "script[src]"].forEach((selector) => {
     $(selector).each(function () {
       const attr = selector.split("[")[1].slice(0, -1);
       const src = $(this).attr(attr);
